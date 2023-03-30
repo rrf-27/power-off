@@ -1,0 +1,54 @@
+body {
+    background: rgb(20, 28, 39);
+}
+nav {
+    color:rgba(243, 243, 243, 1);
+}
+
+nav .underln::before {
+    background: rgba(243, 243, 243, 1);
+}
+
+.p-lines, .p-lines::before, .p-lines::after {
+    background: rgba(243, 243, 243, 1);
+}
+
+.fixed-bck {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: 100% auto;
+    top: 0;
+    z-index: -1;
+}
+
+.bulb-bck {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 500px;
+}
+.earth-bck {
+    --w: 100%;
+    position: absolute;
+    z-index: -1;
+    bottom: -260px;
+    width: var(--w);
+    left: calc(50% - var(--w)/2);
+}
+
+
+/* === */
+.paragraph {
+    width: calc(100% - 200px);
+    margin: auto;
+    height: auto;
+    padding: 50px 100px 50px 100px;
+}
+.paragraph img {
+    height: 500px;
+}
+
+
+

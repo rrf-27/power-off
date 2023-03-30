@@ -1,0 +1,52 @@
+.meet-the-team {
+    width: 100%;
+    height: 500px;
+    background: url('../image/us.jpeg') bottom center fixed;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.txt-suport {
+    width: calc(100% - 10px);
+    height: auto;
+    --txt-size: 72px;
+    position: relative;
+    top: calc(var(--txt-size)/2);
+    left: 10px;
+}
+.txt {
+    font-size: var(--txt-size);
+    float: left;
+    position: relative;
+    color:rgb(255, 255, 255);
+}
+
+.txt::before {
+    content: "";
+    height: calc(var(--txt-size) - 5px);
+    width: 5px;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    right: -10px;
+    top: 5px;
+    animation: fromtransparent .2s linear infinite alternate-reverse;
+}
+
+.txt-about {
+    --pad: 100px;
+    width: calc(100% - 2*var(--pad));
+    height: auto;
+    margin: auto;
+    text-align: justify;
+    padding: var(--pad);
+
+}
+
+
+@keyframes fromtransparent {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

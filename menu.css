@@ -1,0 +1,234 @@
+/*==== menu ==== */
+
+#menu {
+    --menu-w: 30%;
+    width: var(--menu-w);
+    height: 100%;
+    background-color: var(--mode-color);
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    --option-width: 0px;
+    --option-height: 50px;
+    --m-top-option: 10px;
+    --op-color: rgb(119, 159, 18);
+    z-index: 100;
+}
+
+.menu-option {
+    width: 100%;
+    height: var(--option-height);
+    margin-top: var(--m-top-option);
+    cursor: pointer;
+    color: rgb(209, 215, 219);
+}
+
+.menu-option:hover {
+    background: var(--op-color)
+}
+
+.first {
+    margin-top: 0 !important;
+    cursor: auto;
+    height: var(--nav-height);
+}
+.first:hover {
+    background: inherit;
+}
+.first:hover .x-close::before, .first:hover .x-close::after {
+    background: var(--op-color);
+}
+/* === X === */
+
+.x-close {
+    height: 100%;
+    width: 50px;
+    position: relative;
+    --x-h: 50px;
+    --x-w: 5px;
+    cursor: pointer;
+}
+.x-close::before, .x-close::after {
+    content: "";
+    position: absolute;
+    left: calc(50% - var(--x-w)/2);
+    top: calc(50% - var(--x-h)/2);
+    border-radius: 10px;
+    height: var(--x-h);
+    width: var(--x-w);
+    background-color: rgb(209, 215, 219);
+    transition: all .3s linear;
+}
+.x-close::before {
+    transform: rotate(45deg);
+}
+.x-close::after {
+    transform: rotate(-45deg);
+}
+
+
+.last-op {
+    position: relative;
+    top: calc(100% - 9*(var(--option-height) + var(--m-top-option)) - var(--nav-height));
+}
+
+#meme-time {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.703);
+    flex-direction: column;
+    --general-w: 200px;
+    animation: fromtransparent .3s linear;
+    display: none;
+    --op-h: 50px;
+}
+@keyframes fromtransparent {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+.meme {
+    width: var(--general-w);
+    height: 50%;
+}
+.meme-btn {
+    width: var(--general-w);
+    height: var(--op-h);
+    cursor: pointer;
+    position: relative;
+}
+
+.meme, .meme-btn {
+    background: rgba(208, 207, 207, 1);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+
+.meme-btn:hover {
+    background:rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: inset 0 0 0 -10px rgb(0, 0, 0);
+    transform: translateX(5px) translateY(5px);
+    z-index: 1;
+    color: rgba(208, 207, 207, 1);
+}
+
+.meme-btn:hover::after {
+    display: none;
+}
+
+#meme-time .x-close {
+    height: 50px;
+}
+
+
+.small-meme {
+    width: calc(var(--general-w)/2);
+    height: calc(var(--op-h)/2) !important;   
+    font-size: 12px; 
+    position: relative;
+    top: 15px;
+}
+
+
+.red-btn {
+    position: relative;
+    width: 200px !important;
+    height: 200px;
+    border-radius: 50% !important;
+    background: rgb(159, 18, 18);
+    font-size: 25px;
+    text-align: center;
+}
+.red-btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: rgb(159, 18, 18);
+    transition: all .3s linear;
+    border-width: 0 5px 5px 5px;
+    border-style: solid;
+    border-color: rgb(122, 114, 114);
+    box-shadow: inset -5px -10px 10px 8px rgba(0, 0, 0, 0.584);
+}
+
+.red-btn:hover::before {
+    box-shadow: none;
+    left: 0;
+    top: 0;
+    border-width: 5px;
+}
+
+.red-btn {
+    box-shadow: inset -5px -10px 10px 8px rgba(0, 0, 0, 0.584);
+    color:rgb(255, 255, 255)
+}
+.red-btn:hover {
+    box-shadow: none;
+}
+
+
+.meme-place {
+    width: calc(2*var(--general-w));
+    max-width: 100%;
+    max-height: calc(100% - var(--op-h)/2 - 25px - var(--op-h));
+    height: auto;
+}
+
+
+
+#pop-art {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.212);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.box-pop-art {
+    width: 50%;
+    height: auto;
+}
+
+.art-space {
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+}
+
+.art-space-line {
+    width: 100%;
+    height: 2px;
+    background-color:transparent;
+}
+
+#show-afis {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+

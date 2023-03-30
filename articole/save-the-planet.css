@@ -1,0 +1,62 @@
+#cifre {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    --f-size: 64px;
+
+
+}
+.cif {
+    height: var(--f-size);
+    font-family: 'Alkatra', cursive;
+}
+
+.cif-dis {
+    font-size: var(--f-size);
+}
+
+.cif-a {
+    text-align: center;
+    padding-inline: 20px;
+    font-weight: bold;
+}
+
+.ani {
+    animation: fromtop .2s linear;
+}
+
+@keyframes fromtop {
+    from {
+        transform: translateY(-5px);
+    } to {
+        transform: none;
+    }
+}
+
+
+
+.logos {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-column-gap: calc(100% - 3*var(--pad));
+    position: relative;
+}
+.name {
+    height: calc(var(--f-size)/2);
+    text-align: center;
+    font-family: 'Alkatra', cursive;
+}
+
+.second-r {
+    margin-top: 10px;
+}
+
+.fix {
+    position: absolute;
+    left: calc(var(--pad) *(-1));
+    top: 0;
+    height: 350px;
+}
+
+.fix img {
+    max-height: 100%;
+}

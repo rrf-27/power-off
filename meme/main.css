@@ -1,0 +1,76 @@
+
+main {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 20px;
+}
+
+main .center-content-flex {
+    flex-direction: column;
+}
+
+.meme-pl {
+    width: 100%;
+    height: auto;
+}
+
+.meme-place img {
+    height: 100%;
+    width: auto;
+}
+
+.meme-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    --w: 80%;
+    background: rgba(243, 243, 243, .6);
+    animation: fromtransparent .5s linear;
+}
+
+.meme {
+    max-width: var(--w);
+    max-height: 80%;
+    background: inherit;
+}
+.meme-close {
+    width: var(--w);
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.x-meme {
+    height: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    left:calc(100% - 50px);
+    cursor: pointer;
+}
+.x-meme::before, .x-meme::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    top: 50%;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 1);
+}
+
+.x-meme::before {
+    transform: rotate(45deg);
+}
+
+.x-meme::after {
+    transform: rotate(-45deg);
+}
+
+@keyframes fromtransparent {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
