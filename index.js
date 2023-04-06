@@ -1,3 +1,5 @@
+alert("Site-ul nu este terminat!");
+
 theBall = document.getElementsByClassName("ball")[0];
 var init = theBall.offsetTop;
 
