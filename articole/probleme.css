@@ -1,9 +1,0 @@
-body {
-    --stick-w: 0px;
-}
-.fix {
-    width: auto;
-    height: auto;
-    position: relative;
-    left: calc(100% - var(--stick-w));
-}
