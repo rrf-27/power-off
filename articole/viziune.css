@@ -1,0 +1,49 @@
+.fix {
+    position: absolute;
+    bottom: 7.5rem !important;
+    right: 1.25rem !important;
+    z-index: -1;
+    height: 18.75rem;
+}
+
+.sp-art p{
+    padding: 0.625rem 0 0.625rem 0;
+    font-size: 1.188rem;
+}
+
+.sp-art {
+    padding: 1.875rem var(--pad) 0 var(--pad);
+}
+
+.sp-art p::first-letter {
+    font-size: 2rem;
+}
+
+.p-sec::first-letter {
+    color: var(--color);
+}
+
+.first-p {
+    font-size: 1.5rem !important;
+}
+.first-p::first-letter {
+    font-size: inherit !important;
+}
+
+.art-paragraph {
+    font-size: 1.125rem;
+}
+
+
+
+@media (max-width: 450px) {
+    .sp-art {
+        padding: 0;
+    }
+    .img-style {
+        max-width: 100% !important;
+    }
+    .first-p {
+        font-size: 1rem !important;
+    }
+}

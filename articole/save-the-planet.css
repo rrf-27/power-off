@@ -1,0 +1,150 @@
+
+main {
+    width: calc(100% - 0.625rem);
+    margin: auto;
+}
+
+#cifre {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    --f-size: 4rem;
+}
+.cif {
+    height: var(--f-size);
+    font-family: 'Alkatra', cursive;
+}
+
+.cif-dis {
+    font-size: var(--f-size);
+}
+
+.cif-a {
+    text-align: center;
+    padding-inline: 1.25rem;
+    font-weight: bold;
+}
+
+.ani {
+    animation: fromtop .2s linear;
+}
+
+@keyframes fromtop {
+    from {
+        transform: translateY(-5px);
+    } to {
+        transform: none;
+    }
+}
+
+
+
+.logos {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3.125rem;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-gap: 0.625rem;
+    position: relative;
+    grid-template-areas: 
+    'eevie forest cod'
+    'eevieName forestName codName'
+    'free stick freee'
+    'wiki freeee solar';
+}
+
+.grid-el:nth-child(1) {
+    grid-area: eevie;
+}
+.grid-el:nth-child(2) {
+    grid-area: forest;
+}
+.grid-el:nth-child(3) {
+    grid-area: cod;
+}
+
+.grid-el:nth-child(4) {
+    grid-area: eevieName;
+}
+.grid-el:nth-child(5) {
+    grid-area: forestName;
+}
+.grid-el:nth-child(6) {
+    grid-area: codName;
+}
+
+.grid-el:nth-child(7) {
+    grid-area: free;
+}
+.grid-el:nth-child(8) {
+    grid-area: stick;
+}
+.grid-el:nth-child(9) {
+    grid-area: freee;
+}
+
+.grid-el:nth-child(10) {
+    grid-area: wiki;
+}
+.grid-el:nth-child(11) {
+    grid-area: freeee;
+}
+.grid-el:nth-child(12) {
+    grid-area: solar;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .cif-dis {
+        font-size: 4rem;
+    }
+    .cif-a {
+        font-size: 0.75rem;
+    }
+    .art-p-img {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .logos {
+        width: 100%;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        'eevie'
+        'eevieName'
+        'forest'
+        'forestName'
+        'cod'
+        'codName'
+        'wiki'
+        'solar';
+        text-align: center;
+        margin: 0;
+    }
+    .cif-dis {
+        font-size: 2rem;
+    }
+    .cif-a {
+        font-size: .6rem;
+    }
+    .art-p-img  img{
+        width: 100% !important;
+    }
+    .logos img {
+        max-width: 100%;
+    }
+    .grid-el {
+        width: 100%;
+        overflow: hidden;
+    }
+    .stick-sr {
+        display: none;
+    }
+    .grid-el:nth-child(11), .grid-el:nth-child(9), .grid-el:nth-child(7) {
+        display: none;
+    }
+}

@@ -1,0 +1,121 @@
+body {
+    --pad: 9.375rem;
+    text-align: justify;
+}
+
+main {
+    padding-bottom: 6.25rem;
+}
+
+.art-paragraph {
+    width: calc(100% - 2*var(--pad));
+    height: auto;
+    padding: 3.125rem var(--pad) 0 var(--pad);
+    font-size: 1rem;
+}
+
+.quote {
+    --padding-q: 1.875rem;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    font-family: 'Alkatra', cursive;
+    padding: var(--padding-q);
+    font-size: 1.375rem;
+    position: relative;
+    margin-top: 2.5rem;
+}
+
+.quote::before, .quote::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 1);
+    width: 50%;
+    height: 50%;
+}
+
+.quote::before {
+    border-width: 0.125rem 0 0 0.125rem;
+    left: 0;
+    top: 0;
+}
+.quote::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 0.125rem 0.125rem 0;
+}
+
+.quote .author {
+    text-align: right;
+}
+
+.sp-quote::before, .sp-quote::after {
+    border: none;
+}
+.sp-quote {
+    font-size: 1rem;
+    padding: 3.125rem var(--pad) 0 var(--pad);
+    margin-left: 0;
+    margin-top: 0;
+    font-family: inherit;
+}
+
+.art-paragraph:has(img) {
+    margin: auto;
+}
+
+.art-paragraph img {
+    max-height: 31.25rem;
+    text-align: center;
+}
+
+.img-style {
+    position: relative;
+    padding: 1.063rem;
+    top: 3.125rem;
+    text-align: center;
+}
+
+.img-style::before, .img-style::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 1);
+    width: 50%;
+    height: 50%;
+}
+
+.img-style::before {
+    top: 0;
+    right: 0;
+    border-width: 0.125rem 0.125rem 0 0;
+}
+
+.img-style::after {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 0.125rem 0.125rem;
+}
+
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    .quote {
+        --padding-q: 1.875rem;
+        width: calc(100% - 2*var(--padding-q));
+    }
+    .art-paragraph {
+        width: 100%;
+        padding: 1rem 0 1rem 0;
+    }
+    .art-paragraph img {
+        width: 100% !important;
+    }
+    .img-style::before, .img-style::after {
+        display: none;
+    }
+}
+
