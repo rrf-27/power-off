@@ -1,0 +1,284 @@
+/*==== menu ==== */
+
+#menu {
+    --menu-w: 30%;
+    width: var(--menu-w);
+    height: 100%;
+    background-color: var(--mode-color);
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    --option-width: 0px;
+    --option-height: 3.125rem;
+    --m-top-option: 0.625rem;
+    --op-color: rgb(119, 159, 18);
+    z-index: 100;
+}
+
+@keyframes noneToAll {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: var(--menu-w);
+    }
+}
+@keyframes allToNone {
+    0% {
+        width: var(--menu-w);
+        overflow: hidden;
+    }
+    100% {
+        width: 0;
+        overflow: hidden;
+    }
+}
+
+.menu-option {
+    width: 100%;
+    height: var(--option-height);
+    margin-top: var(--m-top-option);
+    cursor: pointer;
+    color: rgb(209, 215, 219);
+}
+
+.menu-option:hover {
+    background: var(--op-color)
+}
+
+.first {
+    margin-top: 0 !important;
+    cursor: auto;
+    height: var(--nav-height);
+}
+.first:hover {
+    background: inherit;
+}
+.first:hover .x-close::before, .first:hover .x-close::after {
+    background: var(--op-color);
+}
+/* === X === */
+
+.x-close {
+    height: 100%;
+    width: 3.125rem;
+    position: relative;
+    --x-h: 3.125rem;
+    --x-w: 0.313rem;
+    cursor: pointer;
+}
+.x-close::before, .x-close::after {
+    content: "";
+    position: absolute;
+    left: calc(50% - var(--x-w)/2);
+    top: calc(50% - var(--x-h)/2);
+    border-radius: 0.625rem;
+    height: var(--x-h);
+    width: var(--x-w);
+    background-color: rgb(209, 215, 219);
+    transition: all .3s linear;
+}
+.x-close::before {
+    transform: rotate(45deg);
+}
+.x-close::after {
+    transform: rotate(-45deg);
+}
+
+
+.last-op {
+    position: relative;
+    top: calc(100% - 9*(var(--option-height) + var(--m-top-option)) - var(--nav-height));
+}
+
+#meme-time {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.703);
+    flex-direction: column;
+    --general-w: 12.5rem;
+    animation: fromtransparent .3s linear;
+    display: none;
+    --op-h: 3.125rem;
+}
+@keyframes fromtransparent {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+.meme {
+    width: var(--general-w);
+    height: 50%;
+}
+.meme-btn {
+    width: var(--general-w);
+    height: var(--op-h);
+    cursor: pointer;
+    position: relative;
+}
+
+.meme, .meme-btn {
+    background: rgba(208, 207, 207, 1);
+    margin-top: 0.625rem;
+    border-radius: 0.625rem;
+}
+
+
+.meme-btn:hover {
+    background:rgb(0, 0, 0);
+    border: 0.063rem solid rgb(255, 255, 255);
+    box-shadow: inset 0 0 0 -0.625rem rgb(0, 0, 0);
+    transform: translateX(0.313rem) translateY(0.313rem);
+    z-index: 1;
+    color: rgba(208, 207, 207, 1);
+}
+
+.meme-btn:hover::after {
+    display: none;
+}
+
+#meme-time .x-close {
+    height: 3.125rem;
+}
+
+
+.small-meme {
+    width: calc(var(--general-w)/2);
+    height: calc(var(--op-h)/2) !important;   
+    font-size: 0.75rem; 
+    position: relative;
+    top: 0.938rem;
+}
+
+
+.red-btn {
+    position: relative;
+    width: 12.5rem !important;
+    height: 12.5rem;
+    border-radius: 50% !important;
+    background: rgb(159, 18, 18);
+    font-size: 1.563rem;
+    text-align: center;
+}
+.red-btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: rgb(159, 18, 18);
+    transition: all .3s linear;
+    border-width: 0 0.313rem 0.313rem 0.313rem;
+    border-style: solid;
+    border-color: rgb(122, 114, 114);
+    box-shadow: inset -0.313rem -0.625rem 0.625rem 0.5rem rgba(0, 0, 0, 0.584);
+}
+
+.red-btn:hover::before {
+    box-shadow: none;
+    left: 0;
+    top: 0;
+    border-width: 0.5rem;
+}
+
+.red-btn {
+    box-shadow: inset -0.5rem -0.625rem 0.625rem 0.5rem rgba(0, 0, 0, 0.584);
+    color:rgb(255, 255, 255)
+}
+.red-btn:hover {
+    box-shadow: none;
+}
+
+
+.meme-place {
+    width: calc(2*var(--general-w));
+    max-width: 100%;
+    max-height: calc(100% - var(--op-h)/2 - 1.563rem - var(--op-h));
+    height: auto;
+}
+
+
+
+#pop-art {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.212);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.box-pop-art {
+    width: 50%;
+    height: auto;
+}
+
+.art-space {
+    font-size: 1.25rem;
+    font-weight: bold;
+    width: 100%;
+    height: 6.25rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.art-space-line {
+    width: 100%;
+    height: 0.125rem;
+    background-color:transparent;
+}
+
+#show-afis {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+@media (max-width: 450px) {
+    #menu {
+        --option-height: 3.7rem;
+    }
+}
+
+@media (max-height:700px) {
+    #menu {
+        --option-height: 2.5rem;
+    }
+    
+}
+
+@media (max-width: 420px) {
+    .art-space {
+        padding: 0.625rem;
+    }
+    .red-btn {
+        width: 10rem !important;
+        height: 10rem;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 320px) {
+    #menu {
+        --option-height: 2.2rem;
+        --nav-height: 2.5rem;
+    }
+    .menu-option {
+        font-size: 0.75rem;
+    }
+}

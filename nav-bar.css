@@ -1,0 +1,68 @@
+/* === nav bar === */
+
+nav {
+    width: 100%;
+    height: var(--nav-height);
+    --p-lines-w: 3.125rem;
+}
+
+.logo {
+    height: 100%;
+    aspect-ratio: 2/1;
+    z-index: 100;
+    overflow: hidden;
+    float: left;
+    cursor: pointer;
+}
+
+.btn {
+    width: 6.25rem;
+    height: var(--btn-height);
+    margin: calc((var(--nav-height) - var(--btn-height))/2) 0.625rem 0.625rem 0;
+    float: right;
+    font-size: 1.125rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.p-lines {
+    position: relative;
+}
+
+.p-lines, .p-lines::before, .p-lines::after {
+    width: var(--p-lines-w);
+    --h-size: 0.25rem;
+    height: var(--h-size);
+    border-radius: 0.625rem;
+    background: var(--mode-color);
+}
+
+.p-lines::before, .p-lines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.p-lines::before {
+    top: calc(-2.5*var(--h-size));
+}
+
+.p-lines::after {
+    top: calc(2.5*var(--h-size))
+}
+
+@media (max-width: 450px) {
+    nav {
+        --p-lines-w: 2.4rem;
+    }
+    .logo {
+        width: var(--p-lines-w);
+        padding: 0 0.625rem 0 0.625rem;
+        aspect-ratio: auto;
+    }
+    .btn {
+        margin: calc((var(--nav-height) - var(--btn-height))/2) 0.188rem 0 0.188rem;
+        width: 4.688rem;
+        font-size: 0.9rem;
+    }
+}

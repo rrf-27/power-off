@@ -1,0 +1,252 @@
+
+/* === main ==== */
+
+main {
+    width: calc(100% - 20px);
+    padding: 0 10px 0 10px;
+    min-height: calc(100% - var(--nav-height));
+    flex-direction: column;
+    --len-box: 100%;
+
+    --s-bck: rgb(236, 236, 236);
+    --s-ball-place-bck:  rgb(217, 217, 217);
+    --s-ball-bck: rgb(175, 173, 173);
+    --s-color: rgba(0, 0, 0, 1);
+}
+
+.light-bulb {
+    width: var(--len-box);
+    height: 408px;
+}
+.light-bulb img {
+    height: 100%;
+    width: auto;
+    animation: shownot .5s linear;
+}
+.v-line {
+    width: 5px;
+    height: 150px;
+    background: var(--mode-color);
+    margin-top: -55px;
+    z-index: -1;
+}
+
+#lbulb-box {
+    margin-top: -70px;
+}
+
+.screw {
+    width: 15px;
+    aspect-ratio: 1/1;
+    background-color: rgb(217, 217, 217);
+    border-radius: 50%;
+    margin: 10px;
+    border: 1px solid rgba(17, 27, 33, .7);
+}
+.m-screw-bar {
+    transform: rotate(45deg) !important;
+}
+
+.bar {
+    width: 100%;
+    height: 1px;
+    background: rgba(17, 27, 33, .7);
+    transform: rotate(-45deg);
+}
+
+.switcher {
+    color: var(--s-color);
+
+    width: 30%;
+    aspect-ratio: 1.2/1.5;
+    border-radius: 10px;
+    background: var(--s-bck);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.ball-place {
+    height: calc(80% - 10px);
+    width: 50%;
+    background-color: var(--s-ball-place-bck);
+    border-radius: 20px;
+    overflow: hidden;
+    --font-s: 16px;
+}
+.ball {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    background-color:  var(--s-ball-bck);
+    color: rgb(0, 0, 0);
+}
+.txt-bar {
+    width: 2px;
+    margin-left: 3px;
+    height: var(--font-s);
+    background-color: rgb(255, 255, 255);
+    animation: shownot .3s linear infinite alternate-reverse;
+}
+
+@keyframes shownot {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+.box {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    --width-model: 50%;
+    margin: 2.5px;
+}
+.v-line-sp, .h-line {
+    position: absolute;
+    width: var(--width-model); 
+    height: 100%;
+    border-style: solid;
+    border-color: var(--mode-color);
+
+    display: flex;
+    align-items: left;
+    justify-content: center;
+}
+.h-line:nth-child(odd) {
+    left: 30%;
+}
+.v-line-sp {
+    border-width: 5px 0 5px 5px;
+}
+.h-line {
+    border-width: 5px 5px 5px 0;
+}
+#special-h-line {
+    margin-top: .5px;
+    width: 32.5%;
+    left: calc(50% - 2.5px);
+}
+
+#special-v {
+    margin-top: -5px;
+    border-bottom: 0;
+}
+
+.sp-box {
+    margin-top: 0;
+}
+
+.box-content {
+    margin-top: 12.5px;
+    width: 65%;
+    height: calc(100% - 20px);
+    background: red;
+    position: absolute;
+    left: 31%;
+    top: 0;
+    display: none;
+    overflow: hidden;
+    --pad: 20px;
+    --f: 64px;
+}
+
+.box-content img {
+    position: absolute;
+    min-width: 100% !important;
+    min-height: 100% !important;
+}
+
+.txt-detail {
+    position: absolute;
+    font-family: 'Alkatra', cursive;
+    top: 0;
+    z-index: 10;
+    left: var(--pad);
+    font-size: var(--f);
+    padding: var(--pad);
+    color: rgb(18, 19, 19);
+}
+
+.right-txt {
+    left: auto !important;
+    right: var(--pad);
+}
+
+.h-line:nth-child(odd) ~ .box-content {
+    left: 7.5%;
+}
+
+.h-line:last-child {
+    border-bottom: none;
+    width: 25%;
+    left: calc(25% - 2.5px);
+}
+.sp-box:last-child {
+    margin-top: 0;
+}
+.s-box {
+    height: 200px;
+}
+
+.e-bulb {
+    transform: scaleY(1);
+}
+
+
+
+.s-box:has(img) {
+    height: 500px;
+}
+
+
+#pop-art {
+    position: fixed !important;
+    color: rgb(18, 19, 19);
+}
+
+
+
+@keyframes slide-left {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: none;
+    }
+}
+@keyframes slide-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    } to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes fromtransparent {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 450px) {
+    .switcher {
+        width: 50%;
+    }
+    .box {
+        height: 200px;
+    }
+    .sp-h-line {
+        margin-top: 0px !important;
+    }
+    .box-content {
+        --f: 32px;
+    }
+    .light-bulb {
+        height: 300px;
+    }
+}
+

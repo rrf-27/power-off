@@ -1,0 +1,56 @@
+#foot {
+    --gap: 10px;
+    --case-h: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, calc(33% - var(--gap)/2));
+    grid-gap: var(--gap);
+    width: 100%;
+    height: var(--case-h);
+    margin-top: 10px;
+    background: rgb(15, 15, 15);
+    border-top: 2px solid  var(--mode-color);
+}
+
+.case-margin {
+    margin-left: calc(var(--gap)/2);
+}
+
+.case-middle img {
+    height: var(--case-h);
+}
+
+.case-margin {
+    display: flex;
+    align-items: center;
+}
+
+.left-case {
+    justify-content: left;
+}
+
+.right-case {
+    justify-content: right;
+}
+
+.left-case .btn-foot {
+    margin-left: var(--gap);
+}
+
+.right-case .btn-foot {
+    margin-right: var(--gap);
+}
+
+.btn-foot {
+    width: 100px;
+    height: 50%;
+    border-radius: 10px;
+    background: rgba(243, 243, 243, 1);
+}
+
+#foot .underln {
+    color:rgb(15, 15, 15);
+}
+
+#foot .underln::before {
+    background:rgb(15, 15, 15);
+}
