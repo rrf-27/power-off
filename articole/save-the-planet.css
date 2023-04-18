@@ -109,7 +109,7 @@ main {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 450px) {
     .logos {
         width: 100%;
         grid-template-columns: 100%;
