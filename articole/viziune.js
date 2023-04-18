@@ -15,10 +15,11 @@ for(var i = 0; i<pSecs.length - 1; i++)
     theTop += pSecs[i].offsetHeight;
 }
 
+
 var theStickMan = document.getElementsByClassName("stick")[0];
 theStickMan.style.top = theTop + "px";
 
-var image = document.getElementById("img-place");
+var image = document.getElementById("meme-img");
 var imgDim = {
     width: image.offsetWidth,
     height: image.offsetHeight
@@ -26,3 +27,4 @@ var imgDim = {
 var imgStyle = document.getElementsByClassName("img-style")[0];
 
 imgStyle.style.width = imgDim.width + "px";
+imgStyle.style.height = imgDim.height + "px";
