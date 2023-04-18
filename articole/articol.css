@@ -98,7 +98,7 @@ main {
 }
 
 
-@media (max-width: 420px) {
+@media (max-width: 450px) {
     .quote {
         --padding-q: 1.875rem;
         width: calc(100% - 2*var(--padding-q));
