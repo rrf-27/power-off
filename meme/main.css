@@ -77,7 +77,7 @@ main .center-content-flex {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 450px) {
     main {
         width: 100%;
         grid-template-columns: repeat(3, auto);
