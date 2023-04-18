@@ -124,7 +124,7 @@ a {
 }
 
 
-@media (max-width: 420px) {
+@media (max-width: 450px) {
     .exit {
         top: 0;
         right: 0;
