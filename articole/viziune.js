@@ -17,3 +17,12 @@ for(var i = 0; i<pSecs.length - 1; i++)
 
 var theStickMan = document.getElementsByClassName("stick")[0];
 theStickMan.style.top = theTop + "px";
+
+var image = document.getElementById("img-place");
+var imgDim = {
+    width: image.offsetWidth,
+    height: image.offsetHeight
+}
+var imgStyle = document.getElementsByClassName("img-style")[0];
+
+imgStyle.style.width = imgDim.width + "px";
