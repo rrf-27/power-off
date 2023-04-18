@@ -1,0 +1,14 @@
+main {
+    width: calc(100% - 0.625rem);
+    margin: auto;
+}
+
+body {
+    --stick-w: 0rem;
+}
+.fix {
+    width: auto;
+    height: auto;
+    position: relative;
+    left: calc(100% - var(--stick-w));
+}
