@@ -64,6 +64,7 @@ menuBtn.close.onclick = function()
     menuDisplay();
 }
 
+console.log(window.location.pathname);
 
 if(window.location.pathname == "/index.html")
 {
