@@ -66,7 +66,7 @@ menuBtn.close.onclick = function()
 
 console.log(window.location.pathname);
 
-if(window.location.pathname == "/index.html")
+if(window.location.pathname == "/power-off/")
 {
     var memeHref = 
     [
