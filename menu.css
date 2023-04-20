@@ -104,6 +104,9 @@
     animation: fromtransparent .3s linear;
     display: none;
     --op-h: 3.125rem;
+    
+    --small-btn-h: calc(var(--op-h)/2);
+    --red-btn-h: 12.5rem;
 }
 @keyframes fromtransparent {
     from {
@@ -151,7 +154,7 @@
 
 .small-meme {
     width: calc(var(--general-w)/2);
-    height: calc(var(--op-h)/2) !important;   
+    height: var(--small-btn-h) !important;   
     font-size: 0.75rem; 
     position: relative;
     top: 0.938rem;
@@ -160,8 +163,8 @@
 
 .red-btn {
     position: relative;
-    width: 12.5rem !important;
-    height: 12.5rem;
+    width: var(--red-btn-h) !important;
+    height: var(--red-btn-h);
     border-radius: 50% !important;
     background: rgb(159, 18, 18);
     font-size: 1.563rem;
@@ -202,7 +205,7 @@
 
 .meme-place {
     width: calc(2*var(--general-w));
-    max-width: 100%;
+    max-width: calc(100% - var(--small-btn-h) - var(--red-btn-h));
     max-height: calc(100% - var(--op-h)/2 - 1.563rem - var(--op-h));
     height: auto;
 }
@@ -240,7 +243,8 @@
 }
 
 #show-afis {
-    position: fixed;
+    position: absolute;
+
     width: 100%;
     height: 100%;
     z-index: 1000;
@@ -249,6 +253,8 @@
     background-color: rgba(0, 0, 0, .5);
     display: none;
 }
+
+
 
 @media (max-width: 450px) {
     #menu {
@@ -263,13 +269,14 @@
     
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     .art-space {
         padding: 0.625rem;
     }
+    #meme-time {
+        --red-btn-h: 10rem
+    }
     .red-btn {
-        width: 10rem !important;
-        height: 10rem;
         font-size: 1rem;
     }
 }
@@ -280,5 +287,17 @@
     }
     .menu-option {
         font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 280px) {
+    #meme-time {
+        --red-btn-h: 7rem;
+    }
+    .red-btn {
+        font-size: .9rem;
+    }
+    .small-meme {
+        font-size: .6rem;
     }
 }
