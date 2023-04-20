@@ -65,27 +65,53 @@ menuBtn.close.onclick = function()
 }
 
 
-var memeHref = 
-[
-    "../meme/meme1.jpeg",
-    "../meme/meme2.jpeg",
-    "../meme/meme3.jpeg",
-    "../meme/meme4.jpeg",
-    "../meme/meme5.jpeg",
-    "../meme/meme6.jpeg",
-    "../meme/meme7.jpeg",
-    "../meme/meme8.jpeg",
-    "../meme/meme9.jpeg",
-    "../meme/meme10.jpeg",
-    "../meme/meme11.jpeg",
-    "../meme/meme12.jpeg",
-    "../meme/meme13.jpeg",
-    "../meme/meme14.jpeg",
-    "../meme/meme15.jpeg",
-    "../meme/meme16.jpeg",
-    "../meme/meme17.jpeg",
-    "../meme/meme18.jpeg"
-];
+if(window.location.pathname == "/index.html")
+{
+    var memeHref = 
+    [
+        "./meme/meme1.jpeg",
+        "./meme/meme2.jpeg",
+        "./meme/meme3.jpeg",
+        "./meme/meme4.jpeg",
+        "./meme/meme5.jpeg",
+        "./meme/meme6.jpeg",
+        "./meme/meme7.jpeg",
+        "./meme/meme8.jpeg",
+        "./meme/meme9.jpeg",
+        "./meme/meme10.jpeg",
+        "./meme/meme11.jpeg",
+        "./meme/meme12.jpeg",
+        "./meme/meme13.jpeg",
+        "./meme/meme14.jpeg",
+        "./meme/meme15.jpeg",
+        "./meme/meme16.jpeg",
+        "./meme/meme17.jpeg",
+        "./meme/meme18.jpeg"
+    ];
+} else {
+    var memeHref = 
+    [
+        "../meme/meme1.jpeg",
+        "../meme/meme2.jpeg",
+        "../meme/meme3.jpeg",
+        "../meme/meme4.jpeg",
+        "../meme/meme5.jpeg",
+        "../meme/meme6.jpeg",
+        "../meme/meme7.jpeg",
+        "../meme/meme8.jpeg",
+        "../meme/meme9.jpeg",
+        "../meme/meme10.jpeg",
+        "../meme/meme11.jpeg",
+        "../meme/meme12.jpeg",
+        "../meme/meme13.jpeg",
+        "../meme/meme14.jpeg",
+        "../meme/meme15.jpeg",
+        "../meme/meme16.jpeg",
+        "../meme/meme17.jpeg",
+        "../meme/meme18.jpeg"
+    ];
+}
+
 
 var memeBtn = document.getElementsByClassName("meme-btn");
 
