@@ -1,0 +1,116 @@
+.meet-the-team {
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    background: url('../image/us\(2\).jpeg');
+    background-position: 0 0;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.txt-suport {
+    width: calc(100% - 0.625rem);
+    height: auto;
+    --txt-size: 8rem;
+    position: relative;
+    top: calc(var(--txt-size)/2);
+    left: 0.625rem;
+}
+.txt {
+    font-size: var(--txt-size);
+    float: left;
+    position: relative;
+    color:rgb(255, 255, 255);
+    background: transparent;
+    text-align: justify;
+}
+
+.txt::before {
+    content: "";
+    height: calc(var(--txt-size) - 5px);
+    width: 0.313rem;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    right: -0.625rem;
+    top: 0.313rem;
+    animation: fromtransparent .2s linear infinite alternate-reverse;
+}
+
+.txt-about {
+    --pad: 100px;
+    width: calc(100% - 2*var(--pad));
+    height: auto;
+    margin: auto;
+    text-align: justify;
+    padding: var(--pad);
+
+}
+
+#foot {
+    position: relative;
+}
+
+video {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.the-video {
+    width: 50%;
+    height: auto;
+    position: relative;
+    left: 25%;
+}
+
+@keyframes fromtransparent {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1020px) 
+{
+    .txt-suport {
+        --txt-size: 4.5rem;
+    }
+    .meet-the-team {
+        height: 31.25rem;
+    }
+    .the-video {
+        width: 80%;
+        left: 10%;
+    }
+}
+
+
+@media (max-width: 480px)
+{
+    .meet-the-team {
+        background-position: 0 0 !important;
+        height: 15rem;
+    }
+    .txt-suport {
+        --txt-size: 2.5rem;
+    }
+    .txt-about {
+        --pad: 50px;
+    }
+    .the-video {
+        width: 100%;
+        border-radius: 0;
+        left: 0;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .meet-the-team {
+        height: 11rem;
+    }
+    .txt-suport {
+        --txt-size: 2rem;
+    }
+}
