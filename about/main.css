@@ -61,6 +61,7 @@ video {
     height: auto;
     position: relative;
     left: 25%;
+    background: rgba(0, 0, 0, 1);
 }
 
 @keyframes fromtransparent {
