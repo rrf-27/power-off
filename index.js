@@ -1,3 +1,5 @@
+alert("Site-ul este in curs de actualizare. Ne cerem scuze pentru posibilele erori aparute!");
+
 theBall = document.getElementsByClassName("ball")[0];
 var init = theBall.offsetTop;
 
